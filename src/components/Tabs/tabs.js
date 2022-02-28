@@ -1,7 +1,4 @@
 import React, {useState} from 'react';
-import {useProductFullDetail} from '@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail';
-import RichContent from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/RichContent/richContent.js';
-import {Tabs} from "react-tabs";
 import classes from './tabs.module.css';
 
 
