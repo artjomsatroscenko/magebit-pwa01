@@ -1,0 +1,5 @@
+.root {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(3rem, max-content));
+}

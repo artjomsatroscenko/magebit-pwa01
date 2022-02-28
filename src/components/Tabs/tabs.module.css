@@ -1,0 +1,19 @@
+.tabGroup{
+/*color:red;*/
+}
+.tabs button{
+    padding:15px 35px;
+    text-align: center;
+    border: 1px solid rgb(var(--venia-global-color-border));
+    border-right: none;
+    border-bottom: none;
+}
+.tabs button:last-child{
+    border-right: 1px solid rgb(var(--venia-global-color-border));
+}
+.tabs{
+    border-bottom: 1px solid rgb(var(--venia-global-color-border));
+}
+button.active {
+    background-color: #F4F5F5;
+}

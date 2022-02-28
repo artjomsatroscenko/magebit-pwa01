@@ -1,0 +1,36 @@
+.root {
+    composes: root from './tile.module.css';
+    background: var(--venia-swatch-bg);
+    color: white;
+    width: 3rem;
+    --venia-swatch-bg: var(--venia-global-color-gray);
+    border:none;
+}
+
+.root:last-child{
+    border-right: none;
+}
+
+.root_selected {
+    composes: root;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.2), transparent),
+        var(--venia-swatch-bg);
+}
+
+.root_focused {
+    composes: root;
+}
+.root_selected_focused {
+    composes: root_selected;
+}
+
+.checked {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 256ms;
+}
+
+.unchecked {
+    composes: checked;
+    opacity: 0;
+}
