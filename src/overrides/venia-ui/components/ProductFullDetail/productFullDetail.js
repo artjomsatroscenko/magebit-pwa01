@@ -8,29 +8,28 @@ import Price from '@magento/venia-ui/lib/components/Price';
 import {useProductFullDetail} from '@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail';
 import {isProductConfigurable} from '@magento/peregrine/lib/util/isProductConfigurable';
 
-import {useStyle} from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/classify.js';
+import {useStyle} from '../../../../../node_modules/@magento/venia-ui/lib/classify.js';
 import Breadcrumbs
-    from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/Breadcrumbs/index.js';
-import Button from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/Button/index.js';
+    from '../../../../../node_modules/@magento/venia-ui/lib/components/Breadcrumbs/index.js';
+import Button from '../../../../../node_modules/@magento/venia-ui/lib/components/Button/index.js';
 import Carousel
-    from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/ProductImageCarousel/index.js';
+    from '../../../../../node_modules/@magento/venia-ui/lib/components/ProductImageCarousel/index.js';
 import FormError
-    from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/FormError/index.js';
+    from '../../../../../node_modules/@magento/venia-ui/lib/components/FormError/index.js';
 import {
     QuantityFields
-} from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/quantity.js';
+} from '@magento/venia-ui/lib/components/CartPage/ProductListing/quantity';
 import RichContent
-    from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/RichContent/richContent.js';
+    from '../../../../../node_modules/@magento/venia-ui/lib/components/RichContent/richContent.js';
 import {
     ProductOptionsShimmer
-} from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js';
+} from '../../../../../node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js';
 import CustomAttributes from './CustomAttributes';
 import defaultClasses from './productFullDetail.module.css';
 import CmsBlock from '@magento/venia-ui/lib/components/CmsBlock';
 import {TabGroup} from '../../../../components/Tabs/tabs';
 
-const WishlistButton = React.lazy(() => import('/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/Wishlist/AddToListButton/index.js'));
-const Options = React.lazy(() => import('/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js'));
+const Options = React.lazy(() => import('../../../../../node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js'));
 
 // Correlate a GQL error message to a field. GQL could return a longer error
 // string but it may contain contextual info such as product id. We can use
@@ -62,7 +61,6 @@ const ProductFullDetail = props => {
         mediaGalleryEntries,
         productDetails,
         customAttributes,
-        wishlistButtonProps,
     } = talonProps;
     const {formatMessage} = useIntl();
 

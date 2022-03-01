@@ -2,10 +2,8 @@ import React, { useRef } from 'react';
 import { useButton } from 'react-aria';
 import { oneOf, shape, string, bool } from 'prop-types';
 
-import { useStyle } from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/classify.js';
+import { useStyle } from '../../../../../node_modules/@magento/venia-ui/lib/classify.js';
 import defaultClasses from './button.module.css';
-
-import Icon from "./ic_cart.png";
 
 const getRootClassName = (priority, negative) =>
     `root_${priority}Priority${negative ? 'Negative' : ''}`;
