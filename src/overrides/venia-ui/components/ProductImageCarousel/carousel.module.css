@@ -79,7 +79,7 @@
             'main main'
             'thumbs thumbs';
         /* These values are mirrored in JS for image sizes. Keep them in sync. */
-        grid-template-columns: 30fr 80fr;
+        grid-template-columns: 120fr 80fr;
     }
 
     .previousButton,
@@ -88,11 +88,12 @@
     }
 
     .thumbnailList {
-        align-content: start;
+        /*align-content: start;*/
         /*grid-auto-flow: row;*/
-        grid-gap: 1.5rem;
-        grid-template-columns: 1fr;
-        margin-top: 0;
+        /*grid-gap: 1.5rem;*/
+        grid-template-columns: 1fr 1fr 1fr;
+        /*margin-top: 0;*/
+
     }
 
     .currentImage {
