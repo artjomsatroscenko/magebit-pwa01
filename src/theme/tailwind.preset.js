@@ -2,7 +2,9 @@ module.exports = {
     theme: {
         colors: {
             blue: {
-                dark: '#1F39FF'
+                dark: '#1F39FF',
+                light: '#5266FF',
+                pressed: '#1C33E6'
             }
         }
     }
