@@ -74,7 +74,7 @@
 
 .productPrice {
     display: block;
-    color:#1F39FF;
+    composes: text-blue-dark from global;
     font-size: 32px;
 }
 
@@ -251,7 +251,7 @@
 
 .longDescription ul li::before{
     content: "\2022";
-    color: #1F39FF;
+    @apply text-blue-dark;
     font-weight: bold;
     display: inline-block;
     width: 1em;

@@ -2,7 +2,7 @@
     composes: root from '@magento/venia-ui/lib/components/clickable.module.css';
     --stroke: var(--venia-brand-color-1-700);
     background: none;
-    border-color: rgb(var(--stroke));
+    composes: bg-blue-dark from global;
     border-style: solid;
     border-width: 2px;
     color: rgb(var(--stroke));
