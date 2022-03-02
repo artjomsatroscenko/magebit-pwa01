@@ -16,7 +16,6 @@
             'images cart'
             'images .'
             'tabGroup tabGroup';
-        /*grid-template-columns: 1.5625fr 1fr;*/
         grid-template-columns: 0.90fr 1fr;
         grid-template-rows: repeat(5, min-content) 1fr [fold];
         padding: 2.5rem 1rem;

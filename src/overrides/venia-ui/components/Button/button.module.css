@@ -24,7 +24,6 @@
 }
 
 .root:focus {
-    /*box-shadow: -6px 6px rgb(var(--venia-brand-color-1-100));*/
     @apply  bg-blue-pressed;
 }
 

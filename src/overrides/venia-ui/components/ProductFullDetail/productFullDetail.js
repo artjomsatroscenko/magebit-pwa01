@@ -229,16 +229,6 @@ const ProductFullDetail = props => {
                 <section className={classes.actions}>
                     {cartActionContent}
                 </section>
-                {/*<section className={classes.description}>*/}
-                {/*    <span className={classes.descriptionTitle}>*/}
-                {/*        <FormattedMessage*/}
-                {/*            id={'productFullDetail.productDescription'}*/}
-                {/*            defaultMessage={'Product Description'}*/}
-                {/*        />*/}
-                {/*    </span>*/}
-                {/*    <RichContent html={product.short_description.html} />*/}
-                {/*</section>*/}
-
                 <section className={classes.tabsContainer}>
                     <TabGroup
                         descName={'tab1'}
@@ -270,17 +260,6 @@ const ProductFullDetail = props => {
                         }
                     />
                 </section>
-
-                {/*<section className={classes.details}>*/}
-                {/*    <span className={classes.detailsTitle}>*/}
-                {/*        <FormattedMessage*/}
-                {/*            id={'global.sku'}*/}
-                {/*            defaultMessage={'SKU'}*/}
-                {/*        />*/}
-                {/*    </span>*/}
-                {/*    <strong>{productDetails.sku}</strong>*/}
-                {/*    <CustomAttributes customAttributes={customAttributes} />*/}
-                {/*</section>*/}
             </Form>
         </Fragment>
     );
