@@ -2,14 +2,19 @@
     composes: root from '@magento/venia-ui/lib/components/clickable.module.css';
     --stroke: var(--venia-brand-color-1-700);
     background: none;
-    border-style: solid;
-    border-width: 2px;
+    /*border-style: solid;*/
+    composes: border-solid from global;
+    /*border-width: 2px;*/
+    composes: border-2 from global;
     color: rgb(var(--stroke));
     font-size: var(--venia-global-fontSize-100);
     font-weight: var(--venia-global-fontWeight-bold);
-    line-height: 1.25rem;
-    width: 100%;
-    max-width: 100%;
+    /*line-height: 1.25rem;*/
+    composes: leading-5 from global;
+    /*width: 100%;*/
+    composes: w-full from global;
+    /*max-width: 100%;*/
+    composes: max-w-full from global;
     min-width: 10rem;
     min-height: 3.5rem;
     outline: none;
@@ -39,11 +44,15 @@
 
 
 .content {
-    align-items: center;
+    /*align-items: center;*/
+    composes: items-center from global;
     display: inline-grid;
-    gap: 1rem;
-    grid-auto-flow: column;
-    justify-content: center;
+    /*gap: 1rem;*/
+    composes: gap-4 from global;
+    /*grid-auto-flow: column;*/
+    composes: grid-flow-col from global;
+    /*justify-content: center;*/
+    composes: justify-center from global;
     justify-items: center;
 }
 

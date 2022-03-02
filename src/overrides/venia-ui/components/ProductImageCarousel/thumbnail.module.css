@@ -5,7 +5,9 @@
     border: 1px solid rgb(var(--venia-global-color-text));
     border-radius: 50%;
     height: 0.875rem;
+    /*composes: h-3.5 from global;*/
     width: 0.875rem;
+    /*composes: w-3.5 from global;*/
     box-shadow: 0 0 0 1px #ffffff;
     outline: none;
 }

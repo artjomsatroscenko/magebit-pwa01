@@ -1,28 +1,46 @@
 .root {
-    margin: 0 1.5rem;
     padding: 1.75rem 0;
-    width: 50%;
+    /*width: 50%;*/
+    composes: w-6/12 from global;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+.root{
+    margin: 0 1.5rem;
+}
 }
 
 .root:last-child{
-    margin: 0px;
+    /*margin: 0px;*/
+    @apply sm_m-0;
 }
 
 .title {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    display: block;
+    /*font-size: 1rem;*/
+    composes: text-base from global;
+    /*font-weight: 600;*/
+    composes: font-semibold from global;
+    /*line-height: 1.5;*/
+    composes: leading-normal from global;
+    /*margin-bottom: 1.5rem;*/
+    composes: mb-6 from global;
+    /*display: block;*/
+    composes: block from global;
 }
 
 .selection {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: 1rem;
-    display: flex;
+    /*font-size: 1rem;*/
+    composes: text-base from global;
+    /*line-height: 1.5;*/
+    composes: leading-normal from global;
+    /*margin-top: 1rem;*/
+    composes: mt-4 from global;
+    /*display: flex;*/
+    composes: flex from global;
 }
 
 .selectionLabel {
-    margin-right: 1rem;
+    /*margin-right: 1rem;*/
+    composes: mr-4 from global;
 }
