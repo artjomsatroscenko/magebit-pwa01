@@ -2,7 +2,7 @@ import React, {Fragment, Suspense} from 'react';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {arrayOf, bool, number, shape, string} from 'prop-types';
 import {Form} from 'informed';
-import {Info} from 'react-feather';
+import {Info , ShoppingBag} from 'react-feather';
 
 import Price from '@magento/venia-ui/lib/components/Price';
 import {useProductFullDetail} from '@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail';
@@ -28,6 +28,8 @@ import CustomAttributes from './CustomAttributes';
 import defaultClasses from './productFullDetail.module.css';
 import CmsBlock from '@magento/venia-ui/lib/components/CmsBlock';
 import {TabGroup} from '../../../../components/Tabs';
+
+// eslint-disable-next-line no-duplicate-imports
 
 const Options = React.lazy(() => import('../../../../../node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js'));
 
@@ -151,6 +153,7 @@ const ProductFullDetail = ({ product }) => {
             disabled={isAddToCartDisabled}
             priority="high"
             type="submit"
+            icon={<ShoppingBag/>}
         >
             {cartCallToActionText}
         </Button>

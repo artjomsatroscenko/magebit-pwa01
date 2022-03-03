@@ -21,6 +21,7 @@ const getRootClassName = (priority, negative) =>
 const Button = props => {
     const {
         children,
+        icon,
         classes: propClasses,
         priority,
         negative,
@@ -50,8 +51,9 @@ const Button = props => {
             {...buttonProps}
             {...restProps}
         >
-            <span className={classes.content}><img src="/src/overrides/venia-ui/components/Button/ic_cart.png"
-                                                   alt="shopping card icon"/>{children}</span>
+            <span className={classes.content}>{icon}{children}</span>
+            {/*<img src="/src/overrides/venia-ui/components/Button/ic_cart.png"*/}
+            {/*     alt="shopping card icon"/>*/}
         </button>
     );
 };
