@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import classes from './tabs.module.css';
+import PropTypes from 'prop-types';
 
 export const TabGroup = (props) => {
     const {
@@ -49,4 +50,13 @@ export const TabGroup = (props) => {
             }
         </div>
     );
+}
+
+TabGroup.propTypes = {
+    descName: PropTypes.string,
+    descLabel: PropTypes.string,
+    descContent: PropTypes.string,
+    attrName: PropTypes.string,
+    attrLabel: PropTypes.string,
+    attrContent: PropTypes.string
 }
