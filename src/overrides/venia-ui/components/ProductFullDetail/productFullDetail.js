@@ -8,26 +8,26 @@ import Price from '@magento/venia-ui/lib/components/Price';
 import {useProductFullDetail} from '@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail';
 import {isProductConfigurable} from '@magento/peregrine/lib/util/isProductConfigurable';
 
-import {useStyle} from '../../../../../node_modules/@magento/venia-ui/lib/classify.js';
+import {useStyle} from '@magento/venia-ui/lib/classify.js';
 import Breadcrumbs
-    from '../../../../../node_modules/@magento/venia-ui/lib/components/Breadcrumbs/index.js';
-import Button from '../../../../../node_modules/@magento/venia-ui/lib/components/Button/index.js';
+    from '@magento/venia-ui/lib/components/Breadcrumbs/index.js';
+import Button from '@magento/venia-ui/lib/components/Button/index.js';
 import Carousel
-    from '../../../../../node_modules/@magento/venia-ui/lib/components/ProductImageCarousel/index.js';
+    from '@magento/venia-ui/lib/components/ProductImageCarousel/index.js';
 import FormError
-    from '../../../../../node_modules/@magento/venia-ui/lib/components/FormError/index.js';
+    from '@magento/venia-ui/lib/components/FormError/index.js';
 import {
     QuantityFields
 } from '@magento/venia-ui/lib/components/CartPage/ProductListing/quantity';
 import RichContent
-    from '../../../../../node_modules/@magento/venia-ui/lib/components/RichContent/richContent.js';
+    from '@magento/venia-ui/lib/components/RichContent/richContent.js';
 import {
     ProductOptionsShimmer
-} from '../../../../../node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js';
+} from '@magento/venia-ui/lib/components/ProductOptions/index.js';
 import CustomAttributes from './CustomAttributes';
 import defaultClasses from './productFullDetail.module.css';
 import CmsBlock from '@magento/venia-ui/lib/components/CmsBlock';
-import {TabGroup} from '../../../../components/Tabs/tabs';
+import {TabGroup} from '../../../../components/Tabs';
 
 const Options = React.lazy(() => import('../../../../../node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js'));
 

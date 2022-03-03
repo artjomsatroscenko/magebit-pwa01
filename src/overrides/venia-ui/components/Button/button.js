@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {useButton} from 'react-aria';
 import {oneOf, shape, string, bool} from 'prop-types';
 
-import {useStyle} from '../../../../../node_modules/@magento/venia-ui/lib/classify.js';
+import {useStyle} from '@magento/venia-ui/lib/classify.js';
 import defaultClasses from './button.module.css';
 
 const getRootClassName = (priority, negative) =>
