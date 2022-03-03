@@ -55,8 +55,8 @@ export const TabGroup = (props) => {
 TabGroup.propTypes = {
     descName: PropTypes.string,
     descLabel: PropTypes.string,
-    descContent: PropTypes.string,
+    descContent: PropTypes.object,
     attrName: PropTypes.string,
     attrLabel: PropTypes.string,
-    attrContent: PropTypes.string
+    attrContent: PropTypes.object
 }
