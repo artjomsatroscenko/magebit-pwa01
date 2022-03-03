@@ -253,8 +253,19 @@
     composes: lg_w-auto from global;
 }
 
+.shipping :global(.column-root-QTy){
+    border-right: 1px solid rgb(var(--venia-global-color-border));
+}
+.shipping :global(.column-root-QTy):last-child{
+    border-right: none;
+}
+
+.shipping :global(.text-root-aN9){
+    @apply inline-block p-5 my-0 mx-auto;
+}
+
 .shipping:first-child {
-    border-right: 1px solid grey;
+    border-right: 1px solid rgb(var(--venia-global-color-border));
 }
 
 .shipping p {
