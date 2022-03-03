@@ -1765,7 +1765,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@magebit/pwa-studio-override-resolver@file:node_modules/@magebit/pwa-studio-override-resolver":
+"@magebit/pwa-studio-override-resolver@file:packages/@magebit/pwa-studio-override-resolver":
   version "0.0.1"
 
 "@magento/babel-preset-peregrine@~1.2.0":
