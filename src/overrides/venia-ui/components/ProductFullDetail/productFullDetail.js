@@ -45,11 +45,7 @@ const ERROR_FIELD_TO_MESSAGE_MAPPING = {
     quantity: 'The requested quantity is not available.'
 };
 
-const ProductFullDetail = props => {
-    const {product} = props;
-
-    const talonProps = useProductFullDetail({product});
-
+const ProductFullDetail = ({ product }) => {
     const {
         breadcrumbCategoryId,
         errorMessage,
@@ -61,10 +57,11 @@ const ProductFullDetail = props => {
         mediaGalleryEntries,
         productDetails,
         customAttributes,
-    } = talonProps;
+    } = useProductFullDetail({ product });
+
     const {formatMessage} = useIntl();
 
-    const classes = useStyle(defaultClasses, props.classes);
+    const classes = useStyle(defaultClasses, product.classes);
 
     const options = isProductConfigurable(product) ? (
         <Suspense fallback={<ProductOptionsShimmer/>}>
