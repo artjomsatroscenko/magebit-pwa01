@@ -1,19 +1,14 @@
 .root {
     display: inline-grid;
-    /*grid-auto-flow: column;*/
     composes: grid-flow-col from global;
     grid-template-areas: 'before input after';
     grid-template-columns: auto 1fr auto;
-    /*height: 100%;*/
     composes: h-full from global;
-    /*width: 100%;*/
     composes: w-full from global;
 }
 
 .input {
-    /*align-items: center;*/
     composes: items-center from global;
-    /*display: flex;*/
     composes: flex from global;
     grid-column: before-start / after-end;
     grid-row: input-start / input-end;
@@ -26,23 +21,17 @@
 
 .before,
 .after {
-    /*align-items: center;*/
     composes: items-center from global;
     display: flex;
-    /*composes: flex from global;*/
-    /*justify-content: center;*/
     composes: justify-center from global;
     margin: 0 2px;
-    /*pointer-events: none;*/
     composes: pointer-events-none from global;
-    /*width: 2.5rem;*/
     composes: w-10 from global;
     z-index: 1;
 }
 
 .before:empty,
 .after:empty {
-    /*display: none;*/
     @apply hidden;
 }
 

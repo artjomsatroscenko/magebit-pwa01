@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
-import { useButton } from 'react-aria';
-import { oneOf, shape, string, bool } from 'prop-types';
+import React, {useRef} from 'react';
+import {useButton} from 'react-aria';
+import {oneOf, shape, string, bool} from 'prop-types';
 
-import { useStyle } from '../../../../../node_modules/@magento/venia-ui/lib/classify.js';
+import {useStyle} from '../../../../../node_modules/@magento/venia-ui/lib/classify.js';
 import defaultClasses from './button.module.css';
 
 const getRootClassName = (priority, negative) =>
@@ -31,7 +31,7 @@ const Button = props => {
 
     const buttonRef = useRef();
 
-    const { buttonProps } = useButton(
+    const {buttonProps} = useButton(
         {
             isDisabled: disabled,
             onPress,
@@ -50,7 +50,8 @@ const Button = props => {
             {...buttonProps}
             {...restProps}
         >
-            <span className={classes.content}><img src="/src/overrides/venia-ui/components/Button/ic_cart.png" alt="shopping card icon"/>{children}</span>
+            <span className={classes.content}><img src="/src/overrides/venia-ui/components/Button/ic_cart.png"
+                                                   alt="shopping card icon"/>{children}</span>
         </button>
     );
 };

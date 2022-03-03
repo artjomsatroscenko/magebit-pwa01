@@ -24,8 +24,7 @@
 }
 
 
-
-.tabsContainer{
+.tabsContainer {
     grid-area: tabGroup;
 }
 
@@ -127,7 +126,7 @@
     border-top: 1px solid rgb(var(--venia-global-color-border));
 }
 
-.options{
+.options {
     composes: sm_flex from global;
     composes: sm_ml-6 from global;
 }
@@ -142,10 +141,11 @@
     grid-area: quantity;
 }
 
-.quantity svg{
+.quantity svg {
     filter: invert(15%) sepia(89%) saturate(4982%) hue-rotate(238deg) brightness(98%) contrast(105%);;
 }
-.quantity svg:hover{
+
+.quantity svg:hover {
     filter: invert(15%) sepia(89%) saturate(4982%) hue-rotate(238deg) brightness(98%) contrast(105%);;
 }
 
@@ -217,7 +217,6 @@
 
 .related {
     composes: section;
-    /*border-bottom-width: 0;*/
     composes: border-b-0 from global;
     grid-column: 1 / span 2;
 }
@@ -233,82 +232,59 @@
 }
 
 .unavailableContainer {
-    /*align-items: center;*/
     composes: items-center from global;
     background-color: rgb(var(--venia-global-color-gray));
     color: rgb(var(--venia-global-color-gray-700));
-    /*column-gap: 0.5rem;*/
     composes: col-gap-2 from global;
-    /*display: grid;*/
     composes: grid from global;
-    /*font-style: italic;*/
     composes: italic from global;
-    /*grid-auto-flow: column;*/
     composes: grid-flow-col from global;
     justify-content: start;
-    /*padding: 0.75rem;*/
     composes: p-3 from global;
-    /*width: 100%;*/
     composes: w-full from global;
 }
 
-.shipping{
-    /*margin-top:20px;*/
+.shipping {
     composes: mt-5 from global;
     background-color: #F4F5F5;
-    /*composes: bg-gray-200 from global;*/
-    /*display: inline-block;*/
     composes: inline-block from global;
-    /*margin-left: 24px;*/
     composes: lg_ml-6 from global;
     composes: w-full from global;
     composes: lg_w-auto from global;
 }
 
-.shipping:first-child{
+.shipping:first-child {
     border-right: 1px solid grey;
 }
 
-.shipping p{
-    /*margin-bottom:0px;*/
-    /*composes: mb-0 from global;*/
-    /*display: inline-block;*/
-    /*composes: inline-block from global;*/
+.shipping p {
     @apply mb-0 inline-block;
 }
 
-.shipping p:first-child{
-    /*float: left;*/
-    /*padding-right: 20px;*/
+.shipping p:first-child {
     @apply float-left pr-5;
 }
 
-.shipping p:last-child{
-    /*text-align: left;*/
-    /*display: block;*/
+.shipping p:last-child {
     @apply text-left block;
 }
 
-.section .shipping{
-    border:none;
+.section .shipping {
+    border: none;
 }
 
-.longDescription{
-    /*margin-left:24px;*/
+.longDescription {
     composes: ml-6 from global;
-    /*font-size:14px;*/
     composes: text-sm from global;
 }
 
-.longDescription ul{
+.longDescription ul {
     list-style: none;
 }
 
-.longDescription ul li::before{
+.longDescription ul li::before {
     content: "\2022";
     @apply text-blue-dark font-bold inline-block;
-    /*font-weight: bold;*/
-    /*display: inline-block;*/
     width: 1em;
     margin-left: -1em;
 }

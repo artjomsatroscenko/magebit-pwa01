@@ -255,7 +255,7 @@ const ProductFullDetail = props => {
                                     />
                                 </span>
                                 <strong>{productDetails.sku}</strong>
-                                <CustomAttributes customAttributes={customAttributes} />
+                                <CustomAttributes customAttributes={customAttributes}/>
                             </section>
                         }
                     />

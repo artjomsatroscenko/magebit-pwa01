@@ -1,48 +1,32 @@
 .root {
     --stroke: var(--venia-global-color-gray-600);
-    /*text-align: center;*/
     composes: text-center from global;
-    /*display: grid;*/
     composes: grid from global;
     grid-template-columns: 1fr 4rem 1fr;
-    /*align-items: center;*/
     composes: items-center from global;
     justify-items: center;
 }
 
 .wrap {
-    /*display: flex;*/
     composes: flex from global;
-    /*align-items: center;*/
     composes: items-center from global;
-    /*justify-content: center;*/
     composes: justify-center from global;
 }
 
 .label:not(:focus):not(:active) {
     @apply absolute overflow-hidden w-px h-px whitespace-nowrap;
-    /*position: absolute;*/
-    /*overflow: hidden;*/
-    /*width: 1px;*/
-    /*height: 1px;*/
     clip: rect(0 0 0 0);
     clip-path: inset(100%);
-    /*white-space: nowrap;*/
 }
 
 .button {
-    /*align-items: center;*/
     composes: items-center from global;
     background-color: rgb(var(--venia-global-color-gray-50));
     border: 1px solid rgb(var(--venia-global-color-gray-600));
-    /*display: inline-flex;*/
     composes: inline-flex from global;
-    /*height: 3.625rem;*/
     composes: h-16 from global;
-    /*justify-content: center;*/
     composes: justify-center from global;
     stroke: rgb(var(--stroke));
-    /*width: 3.625rem;*/
     composes: w-16 from global;
 }
 
@@ -52,7 +36,6 @@
 }
 
 .button:disabled {
-    /*cursor: not-allowed;*/
     @apply cursor-not-allowed;
 }
 
@@ -69,17 +52,13 @@
 }
 
 .icon {
-    /*align-items: center;*/
     composes: items-center from global;
-    /*display: inline-flex;*/
     composes: inline-flex from global;
-    /*justify-content: center;*/
     composes: justify-center from global;
     touch-action: manipulation;
 }
 
 .input {
     composes: input from '@magento/venia-ui/lib/components/TextInput/textInput.module.css';
-    /*text-align: center;*/
     composes: text-center from global;
 }

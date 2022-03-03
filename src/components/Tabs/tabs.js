@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import classes from './tabs.module.css';
 
-
 export const TabGroup = (props) => {
     const {
         descName,
@@ -39,7 +38,6 @@ export const TabGroup = (props) => {
                     ))
                 }
             </div>
-
             {
                 tabList.map((tab, i) => {
                     if (tab.name === currentTab) {

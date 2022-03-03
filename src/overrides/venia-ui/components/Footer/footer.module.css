@@ -1,6 +1,5 @@
 .root {
     color: rgb(var(--venia-global-color-gray-700));
-    /*display: grid;*/
     composes: grid from global;
     font-size: var(--venia-typography-body-S-fontSize);
     grid-template-areas:
@@ -11,10 +10,8 @@
     margin: 0 auto;
     max-width: var(--venia-global-maxWidth);
     min-height: 15rem;
-    /*padding-top: 4rem;*/
     composes: pt-16 from global;
     row-gap: 4rem;
-    /*width: 100%;*/
     composes: w-full from global;
 }
 
@@ -27,13 +24,10 @@
 
 .links {
     display: grid;
-    /*composes: grid from global;*/
     gap: 2rem;
-    /*composes: gap-8 from global;*/
     grid-area: links;
     grid-auto-columns: 18rem;
     grid-auto-flow: column;
-    /*composes: grid-flow-col from global;*/
     grid-template-columns: repeat(3, 1.5fr) 3fr;
     padding: 0 2rem;
 }
@@ -41,7 +35,6 @@
 @media (max-width: 960px) {
     .links {
         grid-auto-flow: row;
-        /*composes: grid-flow-row from global;*/
         grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     }
 }
@@ -49,14 +42,12 @@
 .linkGroup {
     align-content: start;
     display: grid;
-    /*composes: grid from global;*/
     gap: 1em;
 }
 
 .linkItem:first-child {
     color: rgb(var(--venia-global-color-gray-900));
     font-weight: 600;
-    /*@apply font-semibold;*/
 }
 
 .callout {
@@ -64,7 +55,6 @@
     justify-self: center;
     line-height: var(--venia-global-lineHeight-300);
     max-width: 20rem;
-    /*composes: max-w-xs from global;*/
     min-width: 20rem;
 }
 
@@ -78,7 +68,6 @@
     color: rgb(var(--venia-global-color-gray-900));
     font-size: var(--venia-typography-body-S-fontSize);
     font-weight: 600;
-    /*composes: max-w-xs from global;*/
 }
 
 .calloutBody {
@@ -87,31 +76,23 @@
 
 .socialLinks {
     display: grid;
-    /*composes: grid from global;*/
     gap: 1rem;
-    /*composes: gap-4 from global;*/
     grid-auto-flow: column;
-    /*composes: grid-flow-col from global;*/
     justify-content: start;
 }
 
 .branding {
     align-items: center;
-    /*composes: items-center from global;*/
     border-top: 2px solid rgb(var(--venia-global-color-gray-100));
     display: grid;
-    /*composes: grid from global;*/
     grid-area: brand;
     grid-auto-flow: column;
-    /*composes: grid-flow-col from global;*/
     grid-template-areas: 'a b c';
     grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
     height: 4rem;
-    /*composes: h-16 from global;*/
     justify-self: center;
     padding: 0 1.5rem;
     width: 100%;
-    /*composes: w-full from global;*/
 }
 
 @media (max-width: 960px) {
@@ -156,17 +137,20 @@
         margin-top: 2.5rem;
     }
 }
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .callout {
         min-width: 10rem;
     }
 }
+
 @media screen and (max-width: 767px) {
     .links {
         padding: 0 1rem;
         grid-template-columns: 1fr 1fr;
         gap: 2rem 10px;
     }
+
     .callout {
         min-width: 100%;
     }

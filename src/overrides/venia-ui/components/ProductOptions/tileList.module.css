@@ -1,7 +1,5 @@
 .root {
-    /*display: grid;*/
     composes: grid from global;
-    /*grid-auto-flow: column;*/
     composes: grid-flow-col from global;
     grid-template-columns: repeat(auto-fit, minmax(3rem, max-content));
 }
