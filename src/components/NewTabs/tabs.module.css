@@ -1,18 +1,16 @@
 .tabGroup p {
-    font-size: 14px;
+    @apply text-sm;
 }
 
 .tabs{
-    display: flex;
+    composes: flex from global;
 }
 
 .tabs div {
-    padding: 15px 35px;
-    text-align: center;
+    @apply py-4 px-9 cursor-pointer text-center;
     border: 1px solid rgb(var(--venia-global-color-border));
     border-right: none;
     border-bottom: none;
-    cursor: pointer;
 }
 
 .tabs div:last-child {
@@ -20,10 +18,10 @@
 }
 
 div.active {
-    background-color: #F4F5F5;
+    @apply bg-white-active;
 }
 
-.child section{
-    padding-left: 0px !important;
+.child section:global(.productFullDetail-section-dsM){
+    @apply pl-0 !important;
 }
 
