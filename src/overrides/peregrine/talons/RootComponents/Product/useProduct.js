@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useAppContext } from '@magento/peregrine/lib/context/app';
 
-import mergeOperations from '/var/www/learning3/pwa-learning/node_modules/@magento/peregrine/lib/util/shallowMerge.js';
+import mergeOperations from '@magento/peregrine/lib/util/shallowMerge.js';
 import DEFAULT_OPERATIONS from './product.gql';
 
 /**
