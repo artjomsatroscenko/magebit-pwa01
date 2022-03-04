@@ -29,7 +29,6 @@ import defaultClasses from './productFullDetail.module.css';
 import CmsBlock from '@magento/venia-ui/lib/components/CmsBlock';
 import Tabs from "../../../../components/NewTabs/tab";
 import TabPane from "../../../../components/NewTabs/tab-pane";
-// import {TabGroup} from '../../../../components/Tabs';
 
 // eslint-disable-next-line no-duplicate-imports
 
@@ -210,7 +209,6 @@ const ProductFullDetail = ({product}) => {
                     }}
                 />
 
-
                 <section className={classes.imageCarousel}>
                     <Carousel images={mediaGalleryEntries}/>
                 </section>
@@ -231,7 +229,6 @@ const ProductFullDetail = ({product}) => {
                 <section className={classes.actions}>
                     {cartActionContent}
                 </section>
-
                 <section className={classes.tabsContainer}>
                     <Tabs>
                         <TabPane name="Description" key="1">
@@ -259,38 +256,6 @@ const ProductFullDetail = ({product}) => {
                         </TabPane>
                     </Tabs>
                 </section>
-
-                {/*<section className={classes.tabsContainer}>*/}
-                {/*    <TabGroup*/}
-                {/*        descName={'tab1'}*/}
-                {/*        descLabel={'Description'}*/}
-                {/*        descContent={*/}
-                {/*            <section className={classes.description}>*/}
-                {/*                <span className={classes.descriptionTitle}>*/}
-                {/*                    <FormattedMessage*/}
-                {/*                        id={'productFullDetail.productDescription'}*/}
-                {/*                        defaultMessage={'Product Description'}*/}
-                {/*                    />*/}
-                {/*                </span>*/}
-                {/*                <RichContent html={product.short_description.html}/>*/}
-                {/*            </section>*/}
-                {/*        }*/}
-                {/*        attrName={'tab2'}*/}
-                {/*        attrLabel={'Attributes'}*/}
-                {/*        attrContent={*/}
-                {/*            <section className={classes.details}>*/}
-                {/*                <span className={classes.detailsTitle}>*/}
-                {/*                    <FormattedMessage*/}
-                {/*                        id={'global.sku'}*/}
-                {/*                        defaultMessage={'SKU'}*/}
-                {/*                    />*/}
-                {/*                </span>*/}
-                {/*                <strong>{productDetails.sku}</strong>*/}
-                {/*                <CustomAttributes customAttributes={customAttributes}/>*/}
-                {/*            </section>*/}
-                {/*        }*/}
-                {/*    />*/}
-                {/*</section>*/}
             </Form>
         </Fragment>
     );

@@ -3,9 +3,7 @@
 }
 
 .root {
-    /*align-items: start;*/
     composes: items-start from global;
-    /*display: grid;*/
     composes: lg_grid from global;
     grid-auto-flow: row;
     grid-template-areas:
@@ -19,7 +17,6 @@
         'tabGroup tabGroup';
     grid-template-columns: 0.90fr 1fr;
     grid-template-rows: repeat(5, min-content) 1fr [fold];
-    /*padding: 2.5rem 1rem;*/
     composes: lg_py-10 lg_px-4 from global;
 }
 
@@ -30,7 +27,6 @@
 
 .section {
     border-color: rgb(var(--venia-global-color-border));
-    /*border-style: solid;*/
     composes: border-solid from global;
     border-width: 0 0 1px;
     margin: 0 0px 0 1.5rem;
@@ -38,29 +34,20 @@
 }
 
 .sectionTitle {
-    /*align-items: center;*/
     composes: items-center from global;
-    /*display: flex;*/
     composes: flex from global;
-    /*font-size: 1rem;*/
     composes: text-base from global;
-    /*font-weight: 600;*/
     composes: font-semibold from global;
-    /*line-height: 1.5;*/
     composes: leading-normal from global;
-    /*margin-bottom: 1.5rem;*/
     composes: mb-6 from global;
 }
 
 .title {
-    /*align-items: center;*/
     composes: items-center from global;
-    /*display: grid;*/
     composes: grid from global;
     grid-area: title;
     grid-gap: 1rem;
     grid-template-columns: 1fr max-content;
-    /*line-height: 1.5;*/
     composes: leading-normal from global;
     padding: 1rem 1.5rem;
 }
@@ -70,25 +57,19 @@
 }
 
 .productName {
-    /*font-size: 1rem;*/
     composes: text-base from global;
-    /*font-weight: 600;*/
     composes: font-semibold from global;
     font-size: 32px;
 }
 
 .productName {
-    /*font-size: 1.3125rem;*/
     composes: lg_text-3xl from global;
-    /*font-weight: 400;*/
     composes: lg_font-normal from global;
 }
 
 .productPrice {
-    /*display: block;*/
     composes: block from global;
     composes: text-blue-dark from global;
-    /*font-size: 32px;*/
     composes: text-3xl from global;
 }
 
@@ -98,32 +79,22 @@
     grid-row: 1 / fold;
     margin: 0 auto;
     max-width: 640px;
-    /*composes: max-w-screen-sm from global;*/
 }
 
 .imageCarousel {
-    /*margin: 0;*/
     composes: lg_m-0 from global;
-    /*max-width: 800px;*/
     composes: lg_max-w-800px from global;
-    /*padding: 1.5rem 0;*/
     composes: lg_py-6 from global;
 }
 
 .options {
     grid-area: options;
-    /*display:flex;*/
     composes: block from global;
-    /*flex-direction: row-reverse;*/
     composes: flex-row-reverse from global;
-    /*justify-content: flex-end;*/
     composes: justify-end from global;
     border-color: rgb(var(--venia-global-color-border));
-    /*border-style: solid;*/
     composes: border-solid from global;
     border-width: 0 0 1px;
-    /*margin-left:24px;*/
-    /*composes: ml-6 from global;*/
     border-top: 1px solid rgb(var(--venia-global-color-border));
 }
 
@@ -156,12 +127,9 @@
 
 .actions {
     composes: section;
-    /*align-items: center;*/
     composes: items-center from global;
-    /*display: grid;*/
     composes: grid from global;
     grid-area: cart;
-    /*row-gap: 1.5rem;*/
     composes: row-gap-6 from global;
     justify-items: center;
 }
@@ -179,13 +147,9 @@
 }
 
 .description {
-    /*align-self: stretch;*/
     composes: lg_self-stretch from global;
-    /*border-top-width: 1px;*/
     composes: lg_border-t from global;
-    /*margin: 0;*/
     composes: lg_m-0 from global;
-    /*padding-right: 1.5rem;*/
     composes: lg_pr-6 from global;
 }
 
@@ -200,15 +164,10 @@
 }
 
 .details {
-    /*align-self: stretch;*/
     composes: lg_self-stretch from global;
-    /*border-top-width: 1px;*/
     composes: lg_border-t from global;
-    /*margin: 0;*/
     composes: lg_m-0 from global;
-    /*padding-left: 1.5rem;*/
     composes: lg_pl-6 from global;
-    /*padding-right: 1.5rem;*/
     composes: lg_pr-6 from global;
 }
 
