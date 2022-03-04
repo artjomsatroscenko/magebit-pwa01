@@ -1,0 +1,29 @@
+.tabGroup p {
+    font-size: 14px;
+}
+
+.tabs{
+    display: flex;
+}
+
+.tabs div {
+    padding: 15px 35px;
+    text-align: center;
+    border: 1px solid rgb(var(--venia-global-color-border));
+    border-right: none;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.tabs div:last-child {
+    border-right: 1px solid rgb(var(--venia-global-color-border));
+}
+
+div.active {
+    background-color: #F4F5F5;
+}
+
+.child section{
+    padding-left: 0px !important;
+}
+

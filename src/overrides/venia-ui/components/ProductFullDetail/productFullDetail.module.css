@@ -74,11 +74,12 @@
     composes: text-base from global;
     /*font-weight: 600;*/
     composes: font-semibold from global;
+    font-size: 32px;
 }
 
 .productName {
     /*font-size: 1.3125rem;*/
-    composes: lg_text-xl from global;
+    composes: lg_text-3xl from global;
     /*font-weight: 400;*/
     composes: lg_font-normal from global;
 }
@@ -282,6 +283,9 @@
 
 .section .shipping {
     border: none;
+}
+.section .tabsContainer{
+    margin-left: 0px;
 }
 
 .longDescription {

@@ -52,8 +52,6 @@ const Button = props => {
             {...restProps}
         >
             <span className={classes.content}>{icon}{children}</span>
-            {/*<img src="/src/overrides/venia-ui/components/Button/ic_cart.png"*/}
-            {/*     alt="shopping card icon"/>*/}
         </button>
     );
 };

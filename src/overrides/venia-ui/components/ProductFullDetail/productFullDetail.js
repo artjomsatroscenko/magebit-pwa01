@@ -2,7 +2,7 @@ import React, {Fragment, Suspense} from 'react';
 import {FormattedMessage, useIntl} from 'react-intl';
 import {arrayOf, bool, number, shape, string} from 'prop-types';
 import {Form} from 'informed';
-import {Info , ShoppingBag} from 'react-feather';
+import {Info, ShoppingBag} from 'react-feather';
 
 import Price from '@magento/venia-ui/lib/components/Price';
 import {useProductFullDetail} from '@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail';
@@ -27,7 +27,9 @@ import {
 import CustomAttributes from './CustomAttributes';
 import defaultClasses from './productFullDetail.module.css';
 import CmsBlock from '@magento/venia-ui/lib/components/CmsBlock';
-import {TabGroup} from '../../../../components/Tabs';
+import Tabs from "../../../../components/NewTabs/tab";
+import TabPane from "../../../../components/NewTabs/tab-pane";
+// import {TabGroup} from '../../../../components/Tabs';
 
 // eslint-disable-next-line no-duplicate-imports
 
@@ -47,7 +49,7 @@ const ERROR_FIELD_TO_MESSAGE_MAPPING = {
     quantity: 'The requested quantity is not available.'
 };
 
-const ProductFullDetail = ({ product }) => {
+const ProductFullDetail = ({product}) => {
     const {
         breadcrumbCategoryId,
         errorMessage,
@@ -59,7 +61,7 @@ const ProductFullDetail = ({ product }) => {
         mediaGalleryEntries,
         productDetails,
         customAttributes,
-    } = useProductFullDetail({ product });
+    } = useProductFullDetail({product});
 
     const {formatMessage} = useIntl();
 
@@ -229,11 +231,10 @@ const ProductFullDetail = ({ product }) => {
                 <section className={classes.actions}>
                     {cartActionContent}
                 </section>
+
                 <section className={classes.tabsContainer}>
-                    <TabGroup
-                        descName={'tab1'}
-                        descLabel={'Description'}
-                        descContent={
+                    <Tabs>
+                        <TabPane name="Description" key="1">
                             <section className={classes.description}>
                                 <span className={classes.descriptionTitle}>
                                     <FormattedMessage
@@ -243,10 +244,8 @@ const ProductFullDetail = ({ product }) => {
                                 </span>
                                 <RichContent html={product.short_description.html}/>
                             </section>
-                        }
-                        attrName={'tab2'}
-                        attrLabel={'Attributes'}
-                        attrContent={
+                        </TabPane>
+                        <TabPane name="Attributes" key="2">
                             <section className={classes.details}>
                                 <span className={classes.detailsTitle}>
                                     <FormattedMessage
@@ -257,9 +256,41 @@ const ProductFullDetail = ({ product }) => {
                                 <strong>{productDetails.sku}</strong>
                                 <CustomAttributes customAttributes={customAttributes}/>
                             </section>
-                        }
-                    />
+                        </TabPane>
+                    </Tabs>
                 </section>
+
+                {/*<section className={classes.tabsContainer}>*/}
+                {/*    <TabGroup*/}
+                {/*        descName={'tab1'}*/}
+                {/*        descLabel={'Description'}*/}
+                {/*        descContent={*/}
+                {/*            <section className={classes.description}>*/}
+                {/*                <span className={classes.descriptionTitle}>*/}
+                {/*                    <FormattedMessage*/}
+                {/*                        id={'productFullDetail.productDescription'}*/}
+                {/*                        defaultMessage={'Product Description'}*/}
+                {/*                    />*/}
+                {/*                </span>*/}
+                {/*                <RichContent html={product.short_description.html}/>*/}
+                {/*            </section>*/}
+                {/*        }*/}
+                {/*        attrName={'tab2'}*/}
+                {/*        attrLabel={'Attributes'}*/}
+                {/*        attrContent={*/}
+                {/*            <section className={classes.details}>*/}
+                {/*                <span className={classes.detailsTitle}>*/}
+                {/*                    <FormattedMessage*/}
+                {/*                        id={'global.sku'}*/}
+                {/*                        defaultMessage={'SKU'}*/}
+                {/*                    />*/}
+                {/*                </span>*/}
+                {/*                <strong>{productDetails.sku}</strong>*/}
+                {/*                <CustomAttributes customAttributes={customAttributes}/>*/}
+                {/*            </section>*/}
+                {/*        }*/}
+                {/*    />*/}
+                {/*</section>*/}
             </Form>
         </Fragment>
     );
