@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import TabPane from "./tab-pane";
+import TabPane from "./tabPane";
 import classes from "./tabs.module.css";
 
-const Tabs = ({children}) => {
+const Tabs = ({ children }) => {
     const [tabHeader, setTabHeader] = useState([]);
     const [childContent, setChildContent] = useState({});
     const [active, setActive] = useState("");
+
     useEffect(() => {
         const headers = [];
         const childCnt = {};
@@ -18,7 +19,6 @@ const Tabs = ({children}) => {
         setTabHeader(headers);
         setActive(headers[0]);
         setChildContent({ ...childCnt });
-        console.log(childCnt);
     }, [children]);
 
     const changeTab = (name) => {

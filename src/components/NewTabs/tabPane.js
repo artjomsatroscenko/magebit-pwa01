@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classes from "./tabs.module.css";
 
-const TabPane = (props) => {
-    return <div className="tab-pane">{props.childern}</div>;
+const TabPane = ({ children }) => {
+    return <div className={classes.tabPane}>{children}</div>;
 };
+
 TabPane.propTypes = {
     name: PropTypes.string
 };
