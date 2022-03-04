@@ -27,7 +27,6 @@ import {
 import CustomAttributes from './CustomAttributes';
 import defaultClasses from './productFullDetail.module.css';
 import CmsBlock from '@magento/venia-ui/lib/components/CmsBlock';
-// import Tabs from "../../../../components/NewTabs/tab";
 import {TabPane, Tabs} from "../../../../components/NewTabs";
 
 // eslint-disable-next-line no-duplicate-imports
