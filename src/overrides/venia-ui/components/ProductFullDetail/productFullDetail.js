@@ -154,8 +154,8 @@ const ProductFullDetail = ({product}) => {
             disabled={isAddToCartDisabled}
             priority="high"
             type="submit"
-            icon={<ShoppingBag/>}
         >
+            <ShoppingBag/>
             {cartCallToActionText}
         </Button>
     ) : (

@@ -21,7 +21,6 @@ const getRootClassName = (priority, negative) =>
 const Button = props => {
     const {
         children,
-        icon,
         classes: propClasses,
         priority,
         negative,
@@ -51,7 +50,7 @@ const Button = props => {
             {...buttonProps}
             {...restProps}
         >
-            <span className={classes.content}>{icon}{children}</span>
+            <span className={classes.content}>{children}</span>
         </button>
     );
 };
