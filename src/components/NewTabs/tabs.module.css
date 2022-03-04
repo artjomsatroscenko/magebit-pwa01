@@ -1,27 +1,28 @@
-.tabGroup p {
-    @apply text-sm;
+.tabContent {
+    composes: text-sm from global;
 }
 
 .tabs{
     composes: flex from global;
 }
 
+.active, .notActive{
+    composes: py-4 px-9 from global;
+    composes: cursor-pointer from global;
+    composes: text-center from global;
+    composes: border-t border-solid border-white-border from global;
+    composes: border-l border-solid border-white-border from global;
+}
+
 .tabs div {
-    @apply py-4 px-9 cursor-pointer text-center;
-    border: 1px solid rgb(var(--venia-global-color-border));
-    border-right: none;
-    border-bottom: none;
+    @apply last_border-r border-solid border-white-border;
 }
 
-.tabs div:last-child {
-    border-right: 1px solid rgb(var(--venia-global-color-border));
+.active {
+    composes: bg-white-active from global;
 }
 
-div.active {
-    @apply bg-white-active;
-}
-
-.child section:global(.productFullDetail-section-dsM){
+.child section{
     @apply pl-0 !important;
 }
 

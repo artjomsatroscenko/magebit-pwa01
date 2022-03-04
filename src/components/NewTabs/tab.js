@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import TabPane from "./tabPane";
 import classes from "./tabs.module.css";
 
-const Tabs = ({ children }) => {
+const Tabs = ({children}) => {
     const [tabHeader, setTabHeader] = useState([]);
     const [childContent, setChildContent] = useState({});
     const [active, setActive] = useState("");
@@ -12,13 +12,13 @@ const Tabs = ({ children }) => {
         const childCnt = {};
         React.Children.forEach(children, (element) => {
             if (!React.isValidElement(element)) return;
-            const { name } = element.props;
+            const {name} = element.props;
             headers.push(name);
             childCnt[name] = element.props.children;
         });
         setTabHeader(headers);
         setActive(headers[0]);
-        setChildContent({ ...childCnt });
+        setChildContent({...childCnt});
     }, [children]);
 
     const changeTab = (name) => {
@@ -32,12 +32,12 @@ const Tabs = ({ children }) => {
                     <div
                         onClick={() => changeTab(item)}
                         key={item}
-                        className={item === active ? classes.active : ""}
+                        className={item === active ? classes.active : classes.notActive}
                         role="presentation"
                     >
                         {item}
                     </div>
-                ))}
+                    ))}
             </div>
             <div className={classes.tabContent}>
                 {Object.keys(childContent).map((key) => {
@@ -47,8 +47,8 @@ const Tabs = ({ children }) => {
                         return null;
                     }
                 })}
+            </div>
         </div>
-</div>
     );
 };
 
