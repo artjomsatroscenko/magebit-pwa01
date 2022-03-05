@@ -1,0 +1,21 @@
+.tabContent {
+    composes: text-sm from global;
+}
+
+.tabs{
+    composes: flex from global;
+}
+
+.active, .notActive{
+    composes: py-4 px-9 from global;
+    composes: cursor-pointer from global;
+    composes: text-center from global;
+    composes: border-t border-solid border-white-border from global;
+    composes: border-l border-solid border-white-border from global;
+    composes: last_border-r border-solid border-white-border from global;
+}
+
+.active {
+    composes: bg-white-active from global;
+}
+

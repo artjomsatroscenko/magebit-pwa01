@@ -27,6 +27,7 @@
         height: auto;
         width: auto;
     }
+
     .rootSelected {
         composes: root;
         box-shadow: 0 0 10px 0 rgb(var(--venia-global-color-teal));

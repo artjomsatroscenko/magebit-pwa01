@@ -4,22 +4,23 @@
     color: white;
     width: 3rem;
     --venia-swatch-bg: var(--venia-global-color-gray);
-    border:none;
+    border: none;
 }
 
-.root:last-child{
+.root:last-child {
     border-right: none;
 }
 
 .root_selected {
     composes: root;
     background: linear-gradient(-45deg, rgba(0, 0, 0, 0.2), transparent),
-        var(--venia-swatch-bg);
+    var(--venia-swatch-bg);
 }
 
 .root_focused {
     composes: root;
 }
+
 .root_selected_focused {
     composes: root_selected;
 }

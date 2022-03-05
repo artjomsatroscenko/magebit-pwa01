@@ -1,28 +1,37 @@
-import React, { Fragment, Suspense } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { arrayOf, bool, number, shape, string } from 'prop-types';
-import { Form } from 'informed';
-import { Info } from 'react-feather';
+import React, {Fragment, Suspense} from 'react';
+import {FormattedMessage, useIntl} from 'react-intl';
+import {arrayOf, bool, number, shape, string} from 'prop-types';
+import {Form} from 'informed';
+import {Info, ShoppingBag} from 'react-feather';
 
 import Price from '@magento/venia-ui/lib/components/Price';
-import { useProductFullDetail } from '@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail';
-import { isProductConfigurable } from '@magento/peregrine/lib/util/isProductConfigurable';
+import {useProductFullDetail} from '@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail';
+import {isProductConfigurable} from '@magento/peregrine/lib/util/isProductConfigurable';
 
-import { useStyle } from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/classify.js';
-import Breadcrumbs from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/Breadcrumbs/index.js';
-import Button from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/Button/index.js';
-import Carousel from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/ProductImageCarousel/index.js';
-import FormError from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/FormError/index.js';
-import { QuantityFields } from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/quantity.js';
-import RichContent from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/RichContent/richContent.js';
-import { ProductOptionsShimmer } from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js';
+import {useStyle} from '@magento/venia-ui/lib/classify.js';
+import Breadcrumbs
+    from '@magento/venia-ui/lib/components/Breadcrumbs/index.js';
+import Button from '@magento/venia-ui/lib/components/Button/index.js';
+import Carousel
+    from '@magento/venia-ui/lib/components/ProductImageCarousel/index.js';
+import FormError
+    from '@magento/venia-ui/lib/components/FormError/index.js';
+import {
+    QuantityFields
+} from '@magento/venia-ui/lib/components/CartPage/ProductListing/quantity';
+import RichContent
+    from '@magento/venia-ui/lib/components/RichContent/richContent.js';
+import {
+    ProductOptionsShimmer
+} from '@magento/venia-ui/lib/components/ProductOptions/index.js';
 import CustomAttributes from './CustomAttributes';
 import defaultClasses from './productFullDetail.module.css';
 import CmsBlock from '@magento/venia-ui/lib/components/CmsBlock';
-import {TabGroup} from '../../../../components/Tabs/tabs';
+import {TabPane, Tabs} from "../../../../components/NewTabs";
 
-const WishlistButton = React.lazy(() => import('/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/Wishlist/AddToListButton/index.js'));
-const Options = React.lazy(() => import('/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js'));
+// eslint-disable-next-line no-duplicate-imports
+
+const Options = React.lazy(() => import('../../../../../node_modules/@magento/venia-ui/lib/components/ProductOptions/index.js'));
 
 // Correlate a GQL error message to a field. GQL could return a longer error
 // string but it may contain contextual info such as product id. We can use
@@ -38,11 +47,7 @@ const ERROR_FIELD_TO_MESSAGE_MAPPING = {
     quantity: 'The requested quantity is not available.'
 };
 
-const ProductFullDetail = props => {
-    const { product } = props;
-
-    const talonProps = useProductFullDetail({ product });
-
+const ProductFullDetail = ({product}) => {
     const {
         breadcrumbCategoryId,
         errorMessage,
@@ -54,14 +59,14 @@ const ProductFullDetail = props => {
         mediaGalleryEntries,
         productDetails,
         customAttributes,
-        wishlistButtonProps,
-    } = talonProps;
-    const { formatMessage } = useIntl();
+    } = useProductFullDetail({product});
 
-    const classes = useStyle(defaultClasses, props.classes);
+    const {formatMessage} = useIntl();
+
+    const classes = useStyle(defaultClasses, product.classes);
 
     const options = isProductConfigurable(product) ? (
-        <Suspense fallback={<ProductOptionsShimmer />}>
+        <Suspense fallback={<ProductOptionsShimmer/>}>
             <Options
                 onSelectionChange={handleSelectionChange}
                 options={product.configurable_options}
@@ -149,11 +154,12 @@ const ProductFullDetail = props => {
             priority="high"
             type="submit"
         >
+            <ShoppingBag/>
             {cartCallToActionText}
         </Button>
     ) : (
         <div className={classes.unavailableContainer}>
-            <Info />
+            <Info/>
             <p>
                 <FormattedMessage
                     id={'productFullDetail.unavailableProduct'}
@@ -187,9 +193,9 @@ const ProductFullDetail = props => {
                         />
                     </p>
                 </section>
-                <section className={'long-description'}>
-                    <div className={'long-description-box'}>
-                        <RichContent html={productDetails.description} />
+                <section className={classes.longDescription}>
+                    <div className={classes.longDescriptionBox}>
+                        <RichContent html={productDetails.description}/>
                     </div>
                 </section>
 
@@ -202,9 +208,8 @@ const ProductFullDetail = props => {
                     }}
                 />
 
-
                 <section className={classes.imageCarousel}>
-                    <Carousel images={mediaGalleryEntries} />
+                    <Carousel images={mediaGalleryEntries}/>
                 </section>
                 <FormError
                     classes={{
@@ -215,7 +220,7 @@ const ProductFullDetail = props => {
                 <section className={classes.options}>{options}</section>
                 <section className={classes.quantity}>
                     <QuantityFields
-                        classes={{ root: classes.quantityRoot }}
+                        classes={{root: classes.quantityRoot}}
                         min={1}
                         message={errors.get('quantity')}
                     />
@@ -223,37 +228,33 @@ const ProductFullDetail = props => {
                 <section className={classes.actions}>
                     {cartActionContent}
                 </section>
-                {/*<section className={classes.description}>*/}
-                {/*    <span className={classes.descriptionTitle}>*/}
-                {/*        <FormattedMessage*/}
-                {/*            id={'productFullDetail.productDescription'}*/}
-                {/*            defaultMessage={'Product Description'}*/}
-                {/*        />*/}
-                {/*    </span>*/}
-                {/*    <RichContent html={product.short_description.html} />*/}
-                {/*</section>*/}
-
                 <section className={classes.tabsContainer}>
-                    <TabGroup
-                        descName={'tab1'}
-                        descLabel={'Description'}
-                        descContent={<RichContent html={product.short_description.html} />}
-                        attrName={'tab2'}
-                        attrLabel={'Attributes'}
-                        attrContent={<CustomAttributes customAttributes={customAttributes} />}
-                    />
+                    <Tabs>
+                        <TabPane name="Description" key="1">
+                            <section className={classes.description}>
+                                <span className={classes.descriptionTitle}>
+                                    <FormattedMessage
+                                        id={'productFullDetail.productDescription'}
+                                        defaultMessage={'Product Description'}
+                                    />
+                                </span>
+                                <RichContent html={product.short_description.html}/>
+                            </section>
+                        </TabPane>
+                        <TabPane name="Attributes" key="2">
+                            <section className={classes.details}>
+                                <span className={classes.detailsTitle}>
+                                    <FormattedMessage
+                                        id={'global.sku'}
+                                        defaultMessage={'SKU'}
+                                    />
+                                </span>
+                                <strong>{productDetails.sku}</strong>
+                                <CustomAttributes customAttributes={customAttributes}/>
+                            </section>
+                        </TabPane>
+                    </Tabs>
                 </section>
-
-                {/*<section className={classes.details}>*/}
-                {/*    <span className={classes.detailsTitle}>*/}
-                {/*        <FormattedMessage*/}
-                {/*            id={'global.sku'}*/}
-                {/*            defaultMessage={'SKU'}*/}
-                {/*        />*/}
-                {/*    </span>*/}
-                {/*    <strong>{productDetails.sku}</strong>*/}
-                {/*    <CustomAttributes customAttributes={customAttributes} />*/}
-                {/*</section>*/}
             </Form>
         </Fragment>
     );

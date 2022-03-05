@@ -2,75 +2,75 @@
     padding: 1rem 0;
 }
 
-@media (min-width: 1024px) {
-    .root {
-        align-items: start;
-        display: grid;
-        grid-auto-flow: row;
-        grid-template-areas:
-            'images title'
-            'images errors'
-            'images options'
-            'images shipping'
-            'images quantity'
-            'images cart'
-            'images .';
-        /*grid-template-columns: 1.5625fr 1fr;*/
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(5, min-content) 1fr [fold];
-        padding: 2.5rem 1rem;
-    }
+.root {
+    composes: items-start from global;
+    composes: lg_grid from global;
+    grid-auto-flow: row;
+    grid-template-areas:
+        'images title'
+        'images errors'
+        'images options'
+        'images shipping'
+        'images quantity'
+        'images cart'
+        'images .'
+        'tabGroup tabGroup';
+    grid-template-columns: 0.90fr 1fr;
+    grid-template-rows: repeat(5, min-content) 1fr [fold];
+    composes: lg_py-10 lg_px-4 from global;
+}
+
+
+.tabsContainer {
+    grid-area: tabGroup;
 }
 
 .section {
     border-color: rgb(var(--venia-global-color-border));
-    border-style: solid;
+    composes: border-solid from global;
     border-width: 0 0 1px;
-    margin: 0 1.5rem;
+    margin: 0 0px 0 1.5rem;
     padding: 1.5rem 0;
 }
 
 .sectionTitle {
-    align-items: center;
-    display: flex;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    composes: items-center from global;
+    composes: flex from global;
+    composes: text-base from global;
+    composes: font-semibold from global;
+    composes: leading-normal from global;
+    composes: mb-6 from global;
 }
 
 .title {
-    align-items: center;
-    display: grid;
+    composes: items-center from global;
+    composes: grid from global;
     grid-area: title;
     grid-gap: 1rem;
     grid-template-columns: 1fr max-content;
-    line-height: 1.5;
+    composes: leading-normal from global;
     padding: 1rem 1.5rem;
 }
 
-@media (min-width: 1024px) {
-    .title {
-        padding: 1.5rem;
-    }
+.title {
+    composes: lg_p-6 from global;
 }
 
 .productName {
-    font-size: 1rem;
-    font-weight: 600;
+    composes: text-base from global;
+    composes: font-semibold from global;
+    font-size: 32px;
 }
 
-@media (min-width: 1024px) {
-    .productName {
-        font-size: 1.3125rem;
-        font-weight: 400;
-    }
+.productName {
+    composes: lg_text-3xl from global;
+    composes: lg_font-normal from global;
 }
 
 .productPrice {
-    display: block;
-    color:#1F39FF;
-    font-size: 32px;
+    composes: block from global;
+    composes: text-blue-dark from global;
+    composes: text-3xl from global;
 }
 
 .imageCarousel {
@@ -81,24 +81,26 @@
     max-width: 640px;
 }
 
-@media (min-width: 1024px) {
-    .imageCarousel {
-        margin: 0;
-        max-width: 800px;
-        padding: 1.5rem 0;
-    }
+.imageCarousel {
+    composes: lg_m-0 from global;
+    composes: lg_max-w-800px from global;
+    composes: lg_py-6 from global;
 }
 
 .options {
     grid-area: options;
-    display:flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    composes: block from global;
+    composes: flex-row-reverse from global;
+    composes: justify-end from global;
     border-color: rgb(var(--venia-global-color-border));
-    border-style: solid;
+    composes: border-solid from global;
     border-width: 0 0 1px;
-    margin-left:24px;
     border-top: 1px solid rgb(var(--venia-global-color-border));
+}
+
+.options {
+    composes: sm_flex from global;
+    composes: sm_ml-6 from global;
 }
 
 .formErrors {
@@ -111,31 +113,32 @@
     grid-area: quantity;
 }
 
-.quantity svg{
+.quantity svg {
     filter: invert(15%) sepia(89%) saturate(4982%) hue-rotate(238deg) brightness(98%) contrast(105%);;
 }
-.quantity svg:hover{
+
+.quantity svg:hover {
     filter: invert(15%) sepia(89%) saturate(4982%) hue-rotate(238deg) brightness(98%) contrast(105%);;
 }
 
 .quantityTitle {
-    composes: title from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/ProductOptions/option.module.css';
+    composes: title from '@magento/venia-ui/lib/components/ProductOptions/option.module.css';
 }
 
 .actions {
     composes: section;
-    align-items: center;
-    display: grid;
+    composes: items-center from global;
+    composes: grid from global;
     grid-area: cart;
-    row-gap: 1.5rem;
+    composes: row-gap-6 from global;
     justify-items: center;
 }
 
-@media (min-width: 1024px) {
-    .actions {
-        border-bottom-width: 0;
-    }
+
+.actions {
+    composes: lg_border-b-0 from global;
 }
+
 
 .description {
     composes: section;
@@ -143,14 +146,11 @@
     grid-row: fold / span 1;
 }
 
-@media (min-width: 1024px) {
-    .description {
-        align-self: stretch;
-        border-top-width: 1px;
-        margin: 0;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
+.description {
+    composes: lg_self-stretch from global;
+    composes: lg_border-t from global;
+    composes: lg_m-0 from global;
+    composes: lg_pr-6 from global;
 }
 
 .descriptionTitle {
@@ -163,14 +163,11 @@
     grid-row: fold / span 1;
 }
 
-@media (min-width: 1024px) {
-    .details {
-        align-self: stretch;
-        border-top-width: 1px;
-        margin: 0;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
+.details {
+    composes: lg_self-stretch from global;
+    composes: lg_border-t from global;
+    composes: lg_m-0 from global;
+    composes: lg_pr-6 from global;
 }
 
 .detailsTitle {
@@ -179,7 +176,7 @@
 
 .related {
     composes: section;
-    border-bottom-width: 0;
+    composes: border-b-0 from global;
     grid-column: 1 / span 2;
 }
 
@@ -188,47 +185,79 @@
 }
 
 .quantityRoot {
-    composes: root from '/var/www/learning3/pwa-learning/node_modules/@magento/venia-ui/lib/components/CartPage/ProductListing/quantity.module.css';
+    composes: root from '@magento/venia-ui/lib/components/CartPage/ProductListing/quantity.module.css';
     grid-template-columns: auto 4rem auto;
     justify-content: start;
 }
 
 .unavailableContainer {
-    align-items: center;
+    composes: items-center from global;
     background-color: rgb(var(--venia-global-color-gray));
     color: rgb(var(--venia-global-color-gray-700));
-    column-gap: 0.5rem;
-    display: grid;
-    font-style: italic;
-    grid-auto-flow: column;
+    composes: col-gap-2 from global;
+    composes: grid from global;
+    composes: italic from global;
+    composes: grid-flow-col from global;
     justify-content: start;
-    padding: 0.75rem;
-    width: 100%;
+    composes: p-3 from global;
+    composes: w-full from global;
 }
 
-.shipping{
-    margin-top:20px;
+.shipping {
+    composes: mt-5 from global;
     background-color: #F4F5F5;
-    display: inline-block;
-    padding: 30px;
-    margin-left: 24px;
+    composes: inline-block from global;
+    composes: lg_ml-6 from global;
+    composes: w-full from global;
+    composes: lg_w-auto from global;
 }
 
-.shipping p{
-    margin-bottom:0px;
-    display: inline-block;
+.shipping :global(.column-root-QTy){
+    border-right: 1px solid rgb(var(--venia-global-color-border));
+}
+.shipping :global(.column-root-QTy):last-child{
+    border-right: none;
 }
 
-.shipping p:first-child{
-    float: left;
-    padding-right: 20px;
+.shipping :global(.text-root-aN9){
+    @apply inline-block p-5 my-0 mx-auto;
 }
 
-.shipping p:last-child{
-    text-align: left;
-    display: block;
+.shipping:first-child {
+    border-right: 1px solid rgb(var(--venia-global-color-border));
 }
 
-.section .shipping{
-    border:none;
+.shipping p {
+    @apply mb-0 inline-block;
+}
+
+.shipping p:first-child {
+    @apply float-left pr-5;
+}
+
+.shipping p:last-child {
+    @apply text-left block;
+}
+
+.section .shipping {
+    border: none;
+}
+.section .tabsContainer{
+    margin-left: 0px;
+}
+
+.longDescription {
+    composes: ml-6 from global;
+    composes: text-sm from global;
+}
+
+.longDescription ul {
+    list-style: none;
+}
+
+.longDescription ul li::before {
+    content: "\2022";
+    @apply text-blue-dark font-bold inline-block;
+    width: 1em;
+    margin-left: -1em;
 }

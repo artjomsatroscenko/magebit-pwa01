@@ -1765,7 +1765,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@magebit/pwa-studio-override-resolver@file:node_modules/@magebit/pwa-studio-override-resolver":
+"@magebit/pwa-studio-override-resolver@file:packages/@magebit/pwa-studio-override-resolver":
   version "0.0.1"
 
 "@magento/babel-preset-peregrine@~1.2.0":
@@ -6616,6 +6616,11 @@ escodegen@^2.0.0:
     optionator "^0.8.1"
   optionalDependencies:
     source-map "~0.6.1"
+
+eslint-config-prettier@^8.4.0:
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.4.0.tgz#8e6d17c7436649e98c4c2189868562921ef563de"
+  integrity sha512-CFotdUcMY18nGRo5KGsnNxpznzhkopOcOo0InID+sgQssPrzjvsyKZPvOgymTFeHrFuC3Tzdf2YndhXtULK9Iw==
 
 eslint-plugin-babel@~5.3.0:
   version "5.3.1"
