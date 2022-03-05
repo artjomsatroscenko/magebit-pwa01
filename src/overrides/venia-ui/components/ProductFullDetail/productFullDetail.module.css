@@ -167,7 +167,6 @@
     composes: lg_self-stretch from global;
     composes: lg_border-t from global;
     composes: lg_m-0 from global;
-    composes: lg_pl-6 from global;
     composes: lg_pr-6 from global;
 }
 

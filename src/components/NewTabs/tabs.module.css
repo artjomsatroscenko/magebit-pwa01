@@ -12,17 +12,10 @@
     composes: text-center from global;
     composes: border-t border-solid border-white-border from global;
     composes: border-l border-solid border-white-border from global;
-}
-
-.tabs div {
-    @apply last_border-r border-solid border-white-border;
+    composes: last_border-r border-solid border-white-border from global;
 }
 
 .active {
     composes: bg-white-active from global;
-}
-
-.child section{
-    @apply pl-0 !important;
 }
 
